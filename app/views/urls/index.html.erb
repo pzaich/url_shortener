@@ -4,13 +4,13 @@
 <h2>Recent Links</h2>
 <table class="table table-bordered table-striped" style="margin-top:20px">
 		<tr>
-			<td>Original Url</td>
-			<td>Shortend Url</td>
-			<td># of Clicks</td>
+			<td><strong>Original Url</strong></td>
+			<td><strong>Shortened Url</strong></td>
+			<td><strong># of Clicks</strong></td>
 		</tr>
 <% @urls.reverse.each do |url|%>
 		<tr><td><%= url.full_url%></td>
-			<td><%= "#{urls_url}/#{url.id}" %></td>
+			<td><%=  url.vanity ? "#{urls_url}/#{url.vanity}" : "#{urls_url}/#{url.id}" %></td>
 			<td><%= url.counter%></td>
 		</tr>		
 <% end %>

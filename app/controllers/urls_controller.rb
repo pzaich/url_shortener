@@ -10,7 +10,7 @@ class UrlsController < ApplicationController
   def create
     @url = Url.new(params[:url])
     if @url.save
-      flash[:messages] = "Success! Your shortened url is #{root_url}pzz/#{@url.id}"
+      @url.vanity ? flash[:messages] = "Share your vanity url, #{root_url}pzz/#{@url.vanity}!" : flash[:messages] = "Your shortened url is #{root_url}pzz/#{@url.id}!"
       redirect_to new_url_path
       
     else
@@ -21,7 +21,7 @@ class UrlsController < ApplicationController
   end
 
   def show
-    @url = Url.find(params[:id])
+    @url = Url.find(params[:id] || params[:vanity])
     @url.counter += 1
     @url.save 
     redirect_to @url.full_url
