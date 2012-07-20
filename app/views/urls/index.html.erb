@@ -2,6 +2,8 @@
 <%= link_to "Shorten Your URL", new_url_path, :class => "btn btn-large", :style => "float:right" %>
 
 <h2>Recent Links</h2>
+
+<%= render :partial => 'flash', :locals => { :flash => flash } %>
 <table class="table table-bordered table-striped" style="margin-top:20px">
 		<tr>
 			<td><strong>Original Url</strong></td>
@@ -10,7 +12,7 @@
 		</tr>
 <% @urls.reverse.each do |url|%>
 		<tr><td><%= url.full_url%></td>
-			<td><%=  url.vanity ? "#{root_url}pzz/#{url.vanity}" : "#{root_url}pzz/#{url.id}" %></td>
+			<td><%=  !url.vanity.empty? ? "#{root_url}pzz/#{url.vanity}" : "#{root_url}pzz/#{url.id}" %></td>
 			<td><%= url.counter%></td>
 		</tr>		
 <% end %>
