@@ -6,7 +6,6 @@ gem 'rails', '3.2.3'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 group :production do
-  gem 'activerecord-postgresql-adapter', '0.0.1'
   gem 'pg', '0.14.0'
 end
 
