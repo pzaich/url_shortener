@@ -1,3 +1,17 @@
 // Place all the styles related to the urls controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.urls{text-decoration:none; list-style:none; margin-top:20px;}
+
+.urls li{
+  background: #fff;
+}
+
+.urls li:nth-child(2n){
+  background: #eee;
+}
+
+.urls table tr td{
+  min-width: 200px;
+}
