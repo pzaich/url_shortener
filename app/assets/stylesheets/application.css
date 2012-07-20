@@ -11,3 +11,8 @@
  *= require_self
  *= require_tree .
 */
+
+.brand {
+  color: #FF0000 !important
+}
+
