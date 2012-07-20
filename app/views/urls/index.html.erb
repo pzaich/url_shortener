@@ -10,7 +10,7 @@
 		</tr>
 <% @urls.reverse.each do |url|%>
 		<tr><td><%= url.full_url%></td>
-			<td><%= "#{urls_url}#{url.id}" %></td>
+			<td><%= "#{urls_url}/#{url.id}" %></td>
 			<td><%= url.counter%></td>
 		</tr>		
 <% end %>

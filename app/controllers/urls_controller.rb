@@ -22,11 +22,7 @@ class UrlsController < ApplicationController
 
   def show
     @url = Url.find(params[:id])
-    if @url.counter.nil?
-      @url.counter = 1
-    else
-      @url.counter += 1
-    end
+    @url.counter.nil? ? @url.counter = 1 : @url.counter += 1
     @url.save 
     redirect_to @url.full_url
   end
