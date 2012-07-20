@@ -1,23 +1,22 @@
 class UrlsController < ApplicationController
   def new
       @url = Url.new
-      # if params[:url]
-      #      @u = Url.new(:full_url => @params[:url])
-      #      if @u.save
-      #        do something
-      #        else
-      #          show error message
-      #        end
-      #    end
     end
 
     def create
-      @url = Url.new(:full_url => params[:full_url])
-      @url.save
-      redirect_to root_path
+      @url = Url.new(params[:url])
+      if @url.save
+        flash[:messages] = "Success! Your shortened url is #{root_url}pzz/#{@url.id}"
+        redirect_to root_path
+        
+      else
+        flash[:error] = "Invalid Url, must contain http://"
+        redirect_to root_path
+        
+      end 
     end
 
-    # def show
-    #     redirect_to @url(params[:id]).full_url
-    #   end
+    def show
+      redirect_to Url.find(params[:id]).full_url
+    end
 end

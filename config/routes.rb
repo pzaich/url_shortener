@@ -1,5 +1,7 @@
 UrlShortener::Application.routes.draw do
   resources :urls
+  match '/pzz/:id' => 'urls#show'
+  
   root :to => "urls#new"
   
   # The priority is based upon order of creation:

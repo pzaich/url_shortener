@@ -1,2 +1,8 @@
 <h3>Enter a full url to shorten</h3>
+<%if flash[:messages]%>
+	<div class="alert alert-success"><strong><%= flash[:messages]%></strong></div>
+<%elsif flash[:error]%>
+	<div class="alert alert-error"><%= flash[:error]%></div>
+<%end%>
+
 <%= render :partial => 'form' %>
