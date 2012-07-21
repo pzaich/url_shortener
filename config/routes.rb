@@ -1,6 +1,9 @@
 UrlShortener::Application.routes.draw do
   resources :urls
+  resources :users
+
   match '/pzz/:id' => 'urls#show'
+  match '/signup',  :to => 'users#new'
   
   root :to => "urls#index"
   
