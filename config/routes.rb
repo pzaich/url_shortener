@@ -3,7 +3,7 @@ UrlShortener::Application.routes.draw do
   resources :users
 
   match '/pzz/:id' => 'urls#show'
-  match '/signup',  :to => 'users#new'
+  match '/signup',  :to => 'users#new', :as => "signup"
   
   root :to => "urls#index"
   

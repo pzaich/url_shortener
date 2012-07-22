@@ -11,13 +11,20 @@
 	  <div class="navbar-inner">
 	      <a class="brand" href="<%= root_path %>">
 				  PzZizZle Url Shortener
-				</a>
+		  </a>
+
+		  <nav>
+		  	<ul class="nav" style= "float:right">
+		  		<li><%= link_to "Sign in", signup_path, :style => "color: #fff" %></li>
+		  	</ul>
+		  </nav>
 	  </div>
 	</div>
 <div class="container-fluid" style="padding-top: 80px">
 	
 
 	<%= yield %>
+	<%= debug(params) if Rails.env.development? %>
 </div>
 </body>
 </html>
