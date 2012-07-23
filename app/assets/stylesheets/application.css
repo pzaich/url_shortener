@@ -36,7 +36,7 @@
   margin-top: -200px !important;
 }
 
-.modal input[type= "text"]{
+.modal input[type= "text"], .modal input[type= "password"]{
   width: 520px;
 }
 
