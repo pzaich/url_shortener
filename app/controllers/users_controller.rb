@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   	@user = User.new(params[:user])
 
   	if @user.save
+  		flash[:messages] = "Thank you for registering."
   		redirect_to @user
   	else
   		render :action => :new
